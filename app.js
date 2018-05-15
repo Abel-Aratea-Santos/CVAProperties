@@ -38,12 +38,12 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  res.status(err.status || 5000);
   res.render('error');
 });
 
 module.exports = app;
-var port = 7777;
+var port = 5000;
 app.listen(port, () => {
   console.log("server running in " + port);
 });

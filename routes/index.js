@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'HOLA ESTO ES UN MENSAJE PARA DOCKER' });
+  res.render('index', { title: 'VENTA DE INMUEBLES' });
 });
-
+router.get('/propi', function(req, res, next) {
+  res.render('index', { title: 'VENTA DE INMUEBLES' });
+});
 module.exports = router;

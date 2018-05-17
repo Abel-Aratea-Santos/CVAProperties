@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/registro"
+            android:icon="@drawable/registro"
+            android:title="Registrarse" />
+
+        <item
+            android:id="@+id/ingresoagentes"
+            android:icon="@drawable/agente"
+            android:title="Ingreso Para Agentes" />
+        <item
+            android:id="@+id/salir"
+            android:icon="@drawable/salir"
+            android:title="Salir" />
+    </group>
+
+    <item android:title="Buscar">
+        <menu>
+            <item
+                android:id="@+id/propiedad"
+                android:icon="@drawable/propiedad"
+                android:title="Buscar Propiedad" />
+            <item
+                android:id="@+id/mapa"
+                android:icon="@drawable/mapa"
+                android:title="Buscar Por Mapa" />
+        </menu>
+    </item>
+
+</menu>

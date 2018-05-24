@@ -21,9 +21,8 @@
             android:id="@+id/salir"
             android:icon="@drawable/salir"
             android:title="Salir" />
-    </group>
 
-    <item android:title="Buscar">
+        <item android:title="Buscar">
         <menu>
             <item
                 android:id="@+id/propiedad"
@@ -34,6 +33,7 @@
                 android:icon="@drawable/mapa"
                 android:title="Buscar Por Mapa" />
         </menu>
-    </item>
+        </item>
+    </group>
 
 </menu>

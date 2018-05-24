@@ -1,8 +1,11 @@
 package com.example.jonathan.pruebacva;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +45,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
 
+        android.support.v4.app.FragmentManager fragments= getSupportFragmentManager();
+
+        //creando el boton buscar para cambiar de actividad en propiedades
+        Button buscar = (Button)this.findViewById(R.id.buscar);
+        buscar.setOnClickListener((View.OnClickListener) this);
+
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -80,8 +91,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        android.support.v4.app.FragmentManager fragments = getSupportFragmentManager();
+
         if (id == R.id.home) {
-            // Handle the camera action
+            fragments.beginTransaction().replace(R.id.contenedor ,new HomeFragment()).commit();
         } else if (id == R.id.registro) {
 
         } else if (id == R.id.ingresoagentes) {
@@ -89,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.salir) {
 
         } else if (id == R.id.propiedad) {
-
+            fragments.beginTransaction().replace(R.id.contenedor ,new BuscarpropFragment()).commit();
         } else if (id == R.id.mapa) {
 
         }
